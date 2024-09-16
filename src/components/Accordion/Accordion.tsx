@@ -1,15 +1,13 @@
 import { ReactNode, useState } from 'react';
-import classes from './AlgorithmAccordion.module.css';
+import classes from 'components/Accordion/Accordion.module.css';
+import { ReactComponent as Chevron } from 'assets/8665193_chevron_down_icon.svg';
 
-interface AlgorithmAccordionProps {
+interface AccordionProps {
   title: string;
   children: ReactNode;
 }
 
-export default function AlgorithmAccordion({
-  title,
-  children,
-}: AlgorithmAccordionProps) {
+export default function Accordion({ title, children }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const onOpenClick = () => {
@@ -18,9 +16,10 @@ export default function AlgorithmAccordion({
 
   return (
     <div className={classes.accordion}>
-      <h2 className={classes.header} onClick={onOpenClick}>
-        {title}
-      </h2>
+      <div className={classes.header} onClick={onOpenClick}>
+        <h2 className={classes['header-title']}>{title}</h2>
+        <Chevron className={isOpen ? classes.active : ''} />
+      </div>
 
       <div
         className={

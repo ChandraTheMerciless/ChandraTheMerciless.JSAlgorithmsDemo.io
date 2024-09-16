@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import classes from './AlgorithmGroup.module.css';
+import classes from 'components/Algorithms/AlgorithmGroup.module.css';
 
 interface AlgorithmGroupProps {
   algorithm: string;

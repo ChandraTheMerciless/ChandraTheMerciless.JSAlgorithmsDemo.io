@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import classes from 'App.module.css';
 import Algorithms from './components/Algorithms/Algorithms';
 
 function App() {
   return (
-    <div className="app-wrapper">
+    <div className={classes.container}>
       <Algorithms />
     </div>
   );
