@@ -9,8 +9,6 @@ interface AlgorithmGroupProps {
 export default function AlgorithmGroup({ algorithm }: AlgorithmGroupProps) {
   const [answer, setAnswer] = useState();
 
-  const varVar = 'varVar';
-
   const getAnswer = () => {
     const parsed = eval(algorithm);
     setAnswer(typeof parsed === 'boolean' ? parsed.toString() : parsed);
@@ -20,7 +18,9 @@ export default function AlgorithmGroup({ algorithm }: AlgorithmGroupProps) {
     <div className={classes['algorithm-group']}>
       <div className={classes.content}>
         <p>{algorithm}</p>
-        <button onClick={getAnswer}>=</button>
+        <button data-testid="calculateButton" onClick={getAnswer}>
+          =
+        </button>
         <p>{answer}</p>
       </div>
     </div>
