@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import classes from 'components/Accordion/Accordion.module.css';
 import { ReactComponent as Chevron } from 'assets/8665193_chevron_down_icon.svg';
 

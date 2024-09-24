@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import classes from 'components/Algorithms/AlgorithmGroup.module.css';
 
@@ -8,6 +8,8 @@ interface AlgorithmGroupProps {
 
 export default function AlgorithmGroup({ algorithm }: AlgorithmGroupProps) {
   const [answer, setAnswer] = useState();
+
+  const varVar = 'varVar';
 
   const getAnswer = () => {
     const parsed = eval(algorithm);

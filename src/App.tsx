@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import classes from 'App.module.css';
 import Algorithms from './components/Algorithms/Algorithms';
 
