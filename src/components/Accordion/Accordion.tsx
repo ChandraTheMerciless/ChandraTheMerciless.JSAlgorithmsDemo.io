@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import classes from 'components/Accordion/Accordion.module.css';
 import { ReactComponent as Chevron } from 'assets/8665193_chevron_down_icon.svg';
 
@@ -9,10 +9,18 @@ interface AccordionProps {
 
 export default function Accordion({ title, children }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [maxHeight, setMaxHeight] = useState('0px');
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const onOpenClick = () => {
     setIsOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px');
+    }
+  });
 
   return (
     <div className={classes.accordion}>
@@ -27,8 +35,11 @@ export default function Accordion({ title, children }: AccordionProps) {
             ? `${classes.expandable} ${classes.active}`
             : classes.expandable
         }
+        style={{ maxHeight }}
       >
-        <div className={classes.content}>{children}</div>
+        <div className={classes.content} ref={contentRef}>
+          {children}
+        </div>
       </div>
     </div>
   );
