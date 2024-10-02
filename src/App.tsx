@@ -2,7 +2,7 @@ import React from 'react';
 import classes from 'App.module.css';
 import Algorithms from './components/Algorithms/Algorithms';
 
-function App(foo) {
+function App() {
   return (
     <div className={classes.container}>
       <Algorithms />
