@@ -10,6 +10,7 @@ export default function AlgorithmGroup({ algorithm }: AlgorithmGroupProps) {
   const [answer, setAnswer] = useState();
 
   const getAnswer = () => {
+    // eslint-disable-next-line no-eval
     const parsed = eval(algorithm);
     setAnswer(typeof parsed === 'boolean' ? parsed.toString() : parsed);
   };

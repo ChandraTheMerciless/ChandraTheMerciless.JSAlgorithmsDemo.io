@@ -46,6 +46,7 @@ export default [
       '@typescript-eslint/no-empty-function': 'warn',
       '@typescript-eslint/no-empty-interface': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'warn',
+      'no-eval': 'warn',
     },
   },
   // Apply React-specific rules to JavaScript and TypeScript files

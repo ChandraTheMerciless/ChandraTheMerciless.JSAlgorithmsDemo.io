@@ -20,7 +20,7 @@ export default function Accordion({ title, children }: AccordionProps) {
     if (contentRef.current) {
       setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px');
     }
-  });
+  }, [isOpen]);
 
   return (
     <div className={classes.accordion}>
