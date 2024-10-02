@@ -35,10 +35,9 @@ export default function Algorithms() {
         </Accordion>
 
         <Accordion title="Working with null">
-          <AlgorithmGroup algorithm="null > 0" />
-          <AlgorithmGroup algorithm="null == null" />
           <AlgorithmGroup algorithm="null === null" />
-          <AlgorithmGroup algorithm="null === 0" />
+          <AlgorithmGroup algorithm="null > 0" />
+          <AlgorithmGroup algorithm="null == 0" />
           <AlgorithmGroup algorithm="null >= 0" />
           <AlgorithmGroup algorithm="null <= 0" />
         </Accordion>
