@@ -1,12 +1,20 @@
 import React from 'react';
 import classes from 'App.module.css';
-import Algorithms from './components/Algorithms/Algorithms';
+import Algorithms from 'components/Algorithms/Algorithms';
+import Nav from 'components/Nav/Nav';
 
 function App() {
   return (
-    <div className={classes.container}>
-      <Algorithms />
-    </div>
+    <>
+      <header>
+        <Nav />
+      </header>
+      <main>
+        <div className={classes.container}>
+          <Algorithms />
+        </div>
+      </main>
+    </>
   );
 }
 
