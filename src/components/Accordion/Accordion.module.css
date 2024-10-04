@@ -50,8 +50,18 @@
       padding: 0.75rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
       font-size: 1.5rem;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .accordion {
+    .expandable {
+      .content {
+        gap: 1rem;
+      }
     }
   }
 }

@@ -1,52 +1,53 @@
 .algorithm-group {
   .content {
     display: flex;
-    gap: 1rem;
-    align-items: center;
+    gap: 0.5rem;
+    flex-direction: column;
 
     p {
       margin: 0;
     }
 
     button {
-      /* Remove default background and border */
-      /* background-color: gray; */
       background: none;
       border: 2px solid var(--color-dark);
       border-radius: 0.5rem;
-
-      /* Reset padding, margin, and box-sizing */
       padding: 0.2rem 1rem;
       margin: 0;
+      height: 2.75rem;
       box-sizing: border-box;
-
-      /* Reset font styling */
       font: inherit;
+      font-size: 1.75rem;
       color: inherit;
-
-      /* Remove default outline, but keep accessibility */
       outline: none;
-
-      /* Reset text alignment and decoration */
-      text-align: inherit;
+      text-align: center;
       text-decoration: none;
-
-      /* Use consistent appearance */
       appearance: none;
-
-      /* Reset user-select and cursor */
       user-select: none;
       cursor: pointer;
-
-      /* Optionally, reset focus ring but provide custom styles */
-      /* &:focus { */
-      /* outline: 2px solid blue; Or any color you prefer */
-      /* } */
 
       &:hover {
         background-color: var(--color-secondary);
         color: var(--color-light);
       }
+    }
+
+    .answer {
+      font-size: 1.5rem;
+      font-weight: 700;
+      /* height: 2.75rem; */
+      line-height: 2.75rem;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .algorithm-group {
+    .content {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-direction: row;
     }
   }
 }
