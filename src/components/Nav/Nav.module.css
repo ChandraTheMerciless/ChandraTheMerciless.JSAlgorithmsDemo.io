@@ -1,17 +1,59 @@
 @import 'vars.css';
 
 .nav {
+  position: relative;
   padding-top: 1rem;
+  display: flex;
+  align-items: center;
+
   ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    gap: 1rem;
+  }
+
+  .icon-wrapper {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-primary);
+    }
   }
 
   svg {
     height: 2rem;
     fill: var(--color-primary);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      fill: var(--background-color);
+    }
+  }
+
+  .linkedin-icon {
+    outline: 1px solid transparent;
+    border-radius: 20%;
+    &:hover {
+      outline-color: var(--color-primary);
+    }
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    margin: 0 1rem;
+    flex: 1;
+    height: 2px;
+    background-color: var(--color-primary);
   }
 }

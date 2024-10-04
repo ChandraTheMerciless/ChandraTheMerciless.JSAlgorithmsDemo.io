@@ -12,8 +12,11 @@ export default function Nav() {
             target="_blank"
             href="https://github.com/ChandraTheMerciless/js-algorithms-demo"
             rel="noreferrer"
+            aria-label="Chandra Asar Project GitHub"
           >
-            <GitIcon />
+            <div className={classes['icon-wrapper']}>
+              <GitIcon aria-hidden="true" />
+            </div>
           </a>
         </li>
         <li>
@@ -21,8 +24,14 @@ export default function Nav() {
             target="_blank"
             href="https://www.linkedin.com/in/chandra-asar-b325938/"
             rel="noreferrer"
+            aria-label="Chandra Asar LinkedIn"
           >
-            <LinkedInIcon />
+            <div className={classes['icon-wrapper']}>
+              <LinkedInIcon
+                className={classes['linkedin-icon']}
+                aria-hidden="true"
+              />
+            </div>
           </a>
         </li>
       </ul>
