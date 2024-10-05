@@ -8,6 +8,4 @@ test('renders learn react link', () => {
       <div></div>
     </Accordion>
   );
-  //   const linkElement = screen.getByText(/learn react/i);
-  //   expect(linkElement).toBeInTheDocument();
 });

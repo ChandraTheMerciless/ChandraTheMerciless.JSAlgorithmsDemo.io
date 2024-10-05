@@ -1,6 +1,38 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, {
+  ReactNode,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+
+import { NumberAnsweredContext } from 'contexts/NumberAnsweredContext';
+
 import classes from 'components/Accordion/Accordion.module.css';
 import { ReactComponent as Chevron } from 'assets/8665193_chevron_down_icon.svg';
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function to remove the event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowSize;
+}
 
 interface AccordionProps {
   title: string;
@@ -8,9 +40,11 @@ interface AccordionProps {
 }
 
 export default function Accordion({ title, children }: AccordionProps) {
+  const windowSize = useWindowSize();
   const [isOpen, setIsOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState('0px');
   const contentRef = useRef<HTMLDivElement>(null);
+  const numberAnswered = useContext(NumberAnsweredContext);
 
   const onOpenClick = () => {
     setIsOpen((prev) => !prev);
@@ -20,7 +54,7 @@ export default function Accordion({ title, children }: AccordionProps) {
     if (contentRef.current) {
       setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px');
     }
-  }, [isOpen]);
+  }, [isOpen, numberAnswered, windowSize]);
 
   return (
     <div className={classes.accordion}>
